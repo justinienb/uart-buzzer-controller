@@ -37,6 +37,9 @@
 int main (void)
 {
 		board_init();
-		
+
 		app_init();
+		
+		app_run();
+
 }

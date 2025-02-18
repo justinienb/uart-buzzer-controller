@@ -8,16 +8,22 @@
 #ifndef APP_H
 #define APP_H
 
+void vApplicationMallocFailedHook(void);
+
+void app_button_control_task(void *pvParameters);
+
 void app_init(void);
 
-void init_tc_pwm(void);
-void init_tc_adc(void);
-void init_uart_console(void);
+void app_init_tc(void);
+
+void app_init_tc_pwm(void);
+
+void app_init_tc_adc_trigger(void);
+
+void app_init_adc(void);
 
 void app_run(void);
 
-void configure_tc_trigger(void);
-
-void init_adc(void);
+//static void adc_data_ready(void);
 
 #endif

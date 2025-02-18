@@ -32,13 +32,19 @@ void board_init(void)
 	 * specific board configuration, found in conf_board.h.
 	 */
 	
+
+	
 	sysclk_init();
+	
+	#ifndef CONF_BOARD_KEEP_WATCHDOG_AT_INIT
+	WDT->WDT_MR = WDT_MR_WDDIS;
+	#endif
 
 	ioport_init();
 
 	/* Initialize LED0, turned off */
-	//ioport_set_pin_dir(LED_0_PIN, IOPORT_DIR_OUTPUT);
-	//ioport_set_pin_level(LED_0_PIN, IOPORT_PIN_LEVEL_HIGH);
+	ioport_set_pin_dir(LED_0_PIN, IOPORT_DIR_OUTPUT);
+	ioport_set_pin_level(LED_0_PIN, IOPORT_PIN_LEVEL_HIGH);
 	
 
 	//sysclk_enable_peripheral_clock(ID_PIOA);

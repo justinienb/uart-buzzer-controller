@@ -42,4 +42,9 @@
 #define CONF_BOARD_UART_CONSOLE
 #endif
 
+/** Use TC2_Handler for TC capture interrupt**/
+#define TC_Handler  TC1_Handler
+#define TC_IRQn     TC1_IRQn
+
+
 #endif /* CONF_BOARD_H_INCLUDED */
